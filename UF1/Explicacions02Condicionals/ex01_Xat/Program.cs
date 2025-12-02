@@ -29,7 +29,7 @@ namespace Xat
                 player.URL = rutaMp3;
 
                 // Reproduïr MP3
-                Console.WriteLine("Reproduient MP3...");
+                Console.WriteLine("Reproduint MP3...");
                 player.controls.play();
             }
 
