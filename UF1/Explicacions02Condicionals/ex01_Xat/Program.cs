@@ -23,6 +23,7 @@ namespace Xat
             //text.Contains("poema") -> es converteix a true
             if (text.Contains("poema"))
             {
+                //Sortida del resultat
                 Console.WriteLine("Aquí tens un poema:");
                 Console.WriteLine("Estiu,sabem que arribes, \n volem veure’t, ho saben les onades que també vindran a rebre’t.");
             }

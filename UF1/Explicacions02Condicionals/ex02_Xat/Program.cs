@@ -8,6 +8,8 @@ namespace ex02_Xat
     {
         static void Main(string[] args)
         {
+            //Declaració de variables
+
             string text;
             /*Habilitar WindowsMediaPlayer :               
             En el Explorador de soluciones, 
@@ -18,30 +20,34 @@ namespace ex02_Xat
             Busca Windows Media Player*/
             WindowsMediaPlayer player = new WindowsMediaPlayer();
 
-            //l'arxiu mp3 ha d'estar guardar en la subcarpeta que el projecte \bin\Debug
-            string rutaMp3 = @"tu-vuo-fa-l-americano.mp3";
-            player.URL = rutaMp3;
-
             while (true)
             {
                 Console.WriteLine("Hola, en què et puc ajudar?");
                 text = Console.ReadLine();
 
-                if (text.Contains("poema")) 
+                //Operacions
+                if (text.Contains("poema"))
                 {
+                    //Sortida del resultat
                     Console.WriteLine("Aquí tens un poema:");
                     Console.WriteLine("Estiu,sabem que arribes, volem veure’t, ho saben les onades que també vindran a rebre’t.");
                 }
 
-                if ( (text.Contains("música")) || (text.Contains("cançó")) )
+                if ((text.Contains("música")) || (text.Contains("cançó")))
                 {
                     // Reproduïr MP3
+                    //l'arxiu mp3 ha d'estar guardar en la subcarpeta que el projecte \bin\Debug\net     
+                    player.URL = @"tu-vuo-fa-l-americano.mp3"; // ruta del fitxer MP3;
                     Console.WriteLine("Reproduint MP3...");
-                    player.controls.play();
-                }
-            }
+                    player.controls.play();                                    
 
-                //??? fer els controls de pausa
+                    //Console.ReadLine(); //Simula una pausa, fins polsar una tecla                  
+                }
+
+                //???? afegir els condicionals per
+                //pausar la reproducció
+                //para la reproducció
+                //reprendre la reproducció        
                 if (text.Contains("pausa"))
                 {
                     player.controls.pause();
@@ -53,20 +59,18 @@ namespace ex02_Xat
                     player.controls.stop();
                 }
 
-                if (text.Contains("continuar"))
+                if (text.Contains("reprendre"))
                 {
                     player.controls.play();
                 }
 
+                //Si s'escriu sortir s'acaba el programa
                 if (text.Contains("sortir"))
                 {
                     Environment.Exit(0);
                 }
 
-                if ((text.Contains("sortir")) || (text.Contains("adéu")))
-                {
-                    Environment.Exit(0);
-                }
+                //????Modificar el if anterior tant si s'escriu sortir o adéu
             }
         }
     }
