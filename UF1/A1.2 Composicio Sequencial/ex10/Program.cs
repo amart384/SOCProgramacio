@@ -10,6 +10,7 @@
             peus i ens informi del seu equivalent en metres.
             .*/
 
+
             //Declario de variables
             double metres;
             double polzades;
