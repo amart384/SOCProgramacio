@@ -1,4 +1,4 @@
-﻿using System.Media;
+﻿
 using WMPLib;
 
 namespace Xat
@@ -7,35 +7,37 @@ namespace Xat
     {
         static void Main(string[] args)
         {
+            //Exemple xat d'un assistent personal
+            //-Declaració de variables
+            string text;
+
+            //-Entrada de dades
             Console.WriteLine("Hola, en què et puc ajudar?");
-            string text = Console.ReadLine();
-    
-            if (text.Contains("poema")){
+            text = Console.ReadLine();
+
+            //-Operacions
+            //.Contains comprova si un text està dintre d'una altre text
+            //O sigui, comprova si un string està dintre d'una altre string
+            //comprova si "poema" està dintre de text
+            //Si "poema" està dintre de text,
+            //text.Contains("poema") -> es converteix a true
+            if (text.Contains("poema"))
+            {
                 Console.WriteLine("Aquí tens un poema:");
-                Console.WriteLine("Estiu,sabem que arribes, volem veure’t, ho saben les onades que també vindran a rebre’t.");
+                Console.WriteLine("Estiu,sabem que arribes, \n volem veure’t, ho saben les onades que també vindran a rebre’t.");
             }
 
-            if (text.Contains("música")){
-                /*Habilitar WindowsMediaPlayer :               
-                En el Explorador de soluciones, 
-                nos ponemos encima del proyecto
-                clic derecho en References
-                Selecciona Add Reference…
-                Ve a la pestaña COM
-                Busca Windows Media Player*/
+            //Tant si es posa el text música o cançó ha de sonar el mp3
+            if (text.Contains("música"))
+            {
                 WindowsMediaPlayer player = new WindowsMediaPlayer();
-                //l'arxiu mp3 ha d'estar guardar en la subcarpeta que el projecte \bin\Debug
                 string rutaMp3 = @"tu-vuo-fa-l-americano.mp3";
                 player.URL = rutaMp3;
-
-                // Reproduïr MP3
                 Console.WriteLine("Reproduint MP3...");
                 player.controls.play();
+
+                Console.ReadLine(); //Simula una pausa, fins polsar una tecla                  
             }
-
-            //Això espera que es polsi la tecla intro, és per fer una pausa
-            Console.ReadLine();
-
         }
     }
 }
