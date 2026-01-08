@@ -7,6 +7,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ex01_Xat", "ex01_Xat\ex01_X
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ex02_Xat", "ex02_Xat\ex02_Xat.csproj", "{2FE5742F-4695-4858-8B18-B2ED219CD367}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ex02_Xat_v2", "ex02_Xat_v2\ex02_Xat_v2.csproj", "{80E3BDF1-94DB-4253-845C-F9D280D8171E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SouCanviFeina", "SouCanviFeina\SouCanviFeina.csproj", "{F1FCF38A-03EF-4691-B360-069DF1662E8C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +25,14 @@ Global
 		{2FE5742F-4695-4858-8B18-B2ED219CD367}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2FE5742F-4695-4858-8B18-B2ED219CD367}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2FE5742F-4695-4858-8B18-B2ED219CD367}.Release|Any CPU.Build.0 = Release|Any CPU
+		{80E3BDF1-94DB-4253-845C-F9D280D8171E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{80E3BDF1-94DB-4253-845C-F9D280D8171E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{80E3BDF1-94DB-4253-845C-F9D280D8171E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{80E3BDF1-94DB-4253-845C-F9D280D8171E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F1FCF38A-03EF-4691-B360-069DF1662E8C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F1FCF38A-03EF-4691-B360-069DF1662E8C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F1FCF38A-03EF-4691-B360-069DF1662E8C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F1FCF38A-03EF-4691-B360-069DF1662E8C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

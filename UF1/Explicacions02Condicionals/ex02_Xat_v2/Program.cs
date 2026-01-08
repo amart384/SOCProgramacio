@@ -1,16 +1,15 @@
-﻿using System.Media;
-using System.Numerics;
-using WMPLib;
+﻿using WMPLib;
 
-namespace ex02_Xat
+namespace ex02_Xat_v2
 {
     internal class Program
     {
         static void Main(string[] args)
         {
             //Declaració de variables
-
             string text;
+            bool sortir = false;
+
             /*Habilitar WindowsMediaPlayer :               
             En el Explorador de soluciones, 
             nos ponemos encima del proyecto
@@ -20,7 +19,7 @@ namespace ex02_Xat
             Busca Windows Media Player*/
             WindowsMediaPlayer player = new WindowsMediaPlayer();
 
-            while (true)
+            while (!sortir)
             {
                 Console.WriteLine("Hola, en què et puc ajudar?");
                 text = Console.ReadLine();
@@ -31,46 +30,41 @@ namespace ex02_Xat
                     //Sortida del resultat
                     Console.WriteLine("Aquí tens un poema:");
                     Console.WriteLine("Estiu,sabem que arribes, volem veure’t, ho saben les onades que també vindran a rebre’t.");
-                }
-
-                if ((text.Contains("música")) || (text.Contains("cançó")))
+                }                
+                else if ((text.Contains("música")) || (text.Contains("cançó")))
                 {
                     // Reproduïr MP3
                     //l'arxiu mp3 ha d'estar guardar en la subcarpeta que el projecte \bin\Debug\net     
                     player.URL = @"tu-vuo-fa-l-americano.mp3"; // ruta del fitxer MP3;
                     Console.WriteLine("Reproduint MP3...");
-                    player.controls.play();                                    
+                    player.controls.play();
 
                     //Console.ReadLine(); //Simula una pausa, fins polsar una tecla                  
                 }
-
                 //???? afegir els condicionals per
                 //pausar la reproducció
                 //para la reproducció
-                //reprendre la reproducció        
-                if (text.Contains("pausa"))
+                //reprendre la reproducció
+                else if(text.Contains("pausa"))
                 {
                     player.controls.pause();
                 }
-
-                if (text.Contains("stop"))
+                else if(text.Contains("stop"))
                 {
                     player.controls.stop();
                 }
-
-                if (text.Contains("reprendre"))
+                else if(text.Contains("reprendre"))
                 {
                     player.controls.play();
-                }
+                }                //Si s'escriu sortir s'acaba el programa
 
-                //Si s'escriu sortir s'acaba el programa
-                if (text.Contains("sortir"))
+                else if(text.Contains("sortir"))
                 {
-                    Environment.Exit(0);
+                    sortir = true;
                 }
-
                 //????Modificar el if anterior tant si s'escriu sortir o adéu
             }
+          
         }
     }
 }
