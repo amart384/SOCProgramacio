@@ -17,25 +17,56 @@ namespace DemoEscripturaFitxers
             CultureInfo.DefaultThreadCurrentCulture = culture;
             CultureInfo.DefaultThreadCurrentUICulture = culture;
 
+            //Fer un programa que vagi llegint lines de consola
+            //i que les escrigui en un fitxer.
+            //fins que l'introduim la linia amb el contingut "FI"
 
-            //Fer un programa que llegeixi una lina de la consola i l'escrigui en un fitxer.
+            using System.Globalization; // Importa la funcionalidad para gestionar configuraciones regionales (cultura).
 
-            //Declarar les variable per escriure al fitxer
-            StreamWriter fitxer;
-            String linia;
+namespace DemoEscripturaFitxers
+    {
+        internal class Program
+        {
+            static void Main(string[] args)
+            {
+                // Configura la consola para leer y escribir correctamente caracteres especiales (ç, ñ, acentos, etc.)
+                Console.InputEncoding = System.Text.Encoding.UTF8;
+                Console.OutputEncoding = System.Text.Encoding.UTF8;
 
-            //Obrir el fitxer per escriure
-            fitxer = new StreamWriter(@".\..\..\..\dades.txt");
+                // Configura la cultura invariable para evitar problemas con decimales y separadores según la región.
+                CultureInfo culture = CultureInfo.InvariantCulture;
+                CultureInfo.DefaultThreadCurrentCulture = culture;
+                CultureInfo.DefaultThreadCurrentUICulture = culture;
 
-            //Operar amb el fitxer
-            linia = Console.ReadLine(); //llegir una linia de la consola
-            fitxer.WriteLine(linia); //escriure la linia al fitxer
+                // Declara variables para el StreamWriter (archivo), la línea leída y el control de salida.
+                StreamWriter fitxer;
+                String linia;
+                bool sortir = false;
 
-            //Tancar el fitxer
-            fitxer.Close();
+                // Inicializa el StreamWriter para escribir en el archivo dades.txt
+                // en modo añadir (append).
+                fitxer = new StreamWriter(@".\..\..\..\dades.txt", true);
 
-
+                // Bucle que se repite hasta que el usuario escriba "FI".
+                while (!sortir)
+                {
+                    linia = Console.ReadLine(); // Lee una línea de la consola.
+                    if (linia == "FI") // Si la línea es "FI", se sale del bucle.
+                    {
+                        sortir = true;
+                    }
+                    else
+                    {
+                        fitxer.WriteLine(linia); // Escribe la línea en el archivo.
+                    }
+                }
+                fitxer.Close(); // Cierra el archivo para guardar los cambios.
+                
+            }
         }
+    }
+
+}
     }
 }
 
