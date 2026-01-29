@@ -92,17 +92,6 @@ namespace DemoLecturaFitxers
 
             Console.WriteLine("La paraula HOLA apareix "+comptador+" vegades");
 
-
-
-
-
-
-
-
-
-
-
-
             /*
             //Exemple1
             //Programa per llegir d'un fitxer de text
