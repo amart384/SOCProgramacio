@@ -4,6 +4,9 @@
     {
         static void Main(string[] args)
         {
+            //perqupe funcioni bé en sistemes amb diferents codificacions de caràcters
+            Console.InputEncoding = System.Text.Encoding.UTF8;
+            Console.OutputEncoding = System.Text.Encoding.UTF8;
 
             //3. Programa que validi una resposta s/n amb while.
             //Que demani una resposta s ó n,
